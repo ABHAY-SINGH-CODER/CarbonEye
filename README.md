@@ -53,7 +53,7 @@ You can interact with the API using any HTTP client, but this guide provides an 
 
 ### **Endpoint: `/analyze-deforestation`**
 
-* **URL:** `http://localhost:3000/analyze-deforestation`
+* **URL:** `http://https://carboneye-3.onrender.com/analyze-deforestation`
 * **Method:** `POST`
 * **Description:** Analyzes a specified geographic area for vegetation loss.
 
@@ -62,7 +62,7 @@ You can interact with the API using any HTTP client, but this guide provides an 
 This command analyzes a region in the state of Rondônia, Brazil, which has experienced significant deforestation.
 
 ```bash
-curl -X POST http://localhost:3000/analyze-deforestation \
+curl -X POST https://carboneye-3.onrender.com/analyze-deforestation \
 -H "Content-Type: application/json" \
 -d '{"bbox": [-62.88, -10.35, -62.38, -9.85]}'
 ```
