@@ -53,7 +53,7 @@ You can interact with the API using any HTTP client, but this guide provides an 
 
 ### **Endpoint: `/analyze-deforestation`**
 
-* **URL:** `http://https://carboneye-3.onrender.com/analyze-deforestation`
+* **URL:** `https://carboneye.onrender.com/analyze-deforestation`
 * **Method:** `POST`
 * **Description:** Analyzes a specified geographic area for vegetation loss.
 
