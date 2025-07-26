@@ -1,0 +1,124 @@
+openapi: 3.1.0
+info:
+  title: Deforestation Analysis API
+  description: |
+    Proxy to the Sentinel Hub API for analyzing deforestation using NDVI satellite imagery comparison.
+    Compares two time periods to identify vegetation loss ("hotspots").
+  version: "1.0.0"
+
+servers:
+  - url: https://carboneye.onrender.com
+    description: Production server
+
+paths:
+  /analyze-deforestation:
+    post:
+      summary: Analyze deforestation in a geographic area
+      requestBody:
+        description: Geographic region as a bounding box array.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bbox:
+                  type: array
+                  description: Bounding box [minLon, minLat, maxLon, maxLat]
+                  items:
+                    type: number
+                  minItems: 4
+                  maxItems: 4
+              required:
+                - bbox
+            example:
+              bbox: [-62.88, -10.35, -62.38, -9.85]
+      responses:
+        '200':
+          description: NDVI analysis and alerts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  today:
+                    type: object
+                    properties:
+                      trueColor:
+                        type: string
+                        description: Base64-encoded PNG image (True Color) from the last 30 days
+                      ndvi:
+                        type: string
+                        description: Base64-encoded PNG image (NDVI) from the last 30 days
+                  past:
+                    type: object
+                    properties:
+                      trueColor:
+                        type: string
+                        description: Base64-encoded PNG image (True Color) from the 30 days prior
+                      ndvi:
+                        type: string
+                        description: Base64-encoded PNG image (NDVI) from the 30 days prior
+                  alerts:
+                    type: array
+                    description: Deforestation hotspots
+                    items:
+                      type: object
+                      properties:
+                        position:
+                          type: object
+                          properties:
+                            lat:
+                              type: number
+                            lon:
+                              type: number
+                        severity:
+                          type: string
+                          enum: [critical, moderate]
+                        change:
+                          type: string
+                          description: Negative change in NDVI value
+                  analysis:
+                    type: object
+                    properties:
+                      totalAlerts:
+                        type: integer
+                        description: Number of detected alerts
+                      criticalAlerts:
+                        type: integer
+                      moderateAlerts:
+                        type: integer
+                      timeRange:
+                        type: object
+                        properties:
+                          recent:
+                            type: string
+                            description: Date range string for the most recent analysis
+                          past:
+                            type: string
+                            description: Date range string for the previous analysis
+              example:
+                today:
+                  trueColor: data:image/png;base64,...
+                  ndvi: data:image/png;base64,...
+                past:
+                  trueColor: data:image/png;base64,...
+                  ndvi: data:image/png;base64,...
+                alerts:
+                  - position: { lat: -10.12345, lon: -62.56789 }
+                    severity: critical
+                    change: "-0.451"
+                  - position: { lat: -10.23456, lon: -62.67890 }
+                    severity: moderate
+                    change: "-0.223"
+                analysis:
+                  totalAlerts: 2
+                  criticalAlerts: 1
+                  moderateAlerts: 1
+                  timeRange:
+                    recent: "2025-06-16 to 2025-07-16"
+                    past: "2025-05-16 to 2025-06-16"
+        '400':
+          description: Invalid request payload
+        '500':
+          description: Internal server error
