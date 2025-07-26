@@ -2,9 +2,13 @@
 
 **Eyes on the forest. Always.**
 
-This README provides a comprehensive, full-stack guide to understanding, setting up, and running the entire CarbonEye platform. This includes the backend services, the cross-platform Flutter application, and the public-facing informational website.
+###  [📱 App Link](https://github.com/akshat2474/CarbonEye/releases/download/v1.0.0/CarbonEye.apk)  
+###  [🌍 Website Link](https://akshat2474.github.io/CarbonEye/)
+###  [🛠️ API Base URL](https://carboneye-api.onrender.com)
 
-## 📜 Project Overview
+>  *Note: The server is hosted on Render's free tier, which goes to sleep when inactive. The first request may take up to **50 seconds** to wake up.*
+
+## Project Overview
 
 CarbonEye is a powerful tool designed to provide real-time intelligence on deforestation activities across the globe. By leveraging satellite imagery analysis, it empowers users to monitor specific regions, receive timely alerts, and generate detailed impact reports for environmental, social, and governance (ESG) purposes.
 
@@ -14,7 +18,7 @@ The platform consists of three main parts:
 * **A cross-platform frontend application** built with Flutter, providing a rich, interactive user experience for analysis on mobile (iOS/Android) and the web.
 * **An informational static website** built with HTML, CSS, and JavaScript, which serves as the public landing page, providing project details, team information, and the user dashboard.
 
-## 🏛️ Full-Stack Architecture
+## Full-Stack Architecture
 
 The CarbonEye platform is built on a modern, decoupled architecture. The clients communicate with the backend via a REST API, allowing for independent development, deployment, and scaling of each component.
 
@@ -70,7 +74,7 @@ flowchart TB
 
 ```
 
-## ✨ Features
+## Features
 
 * **Cross-Platform Client:** A Flutter application for Android, iOS, and Web for in-depth analysis.
 * **Public-Facing Website:** An informational website with project details, team bios, and a user dashboard.
@@ -82,7 +86,7 @@ flowchart TB
 * **Comprehensive PDF Reporting:** Generates professional PDF reports summarizing the analysis for ESG documentation.
 * **Microservice-Ready Backend:** A scalable Node.js backend handles all data processing and analysis.
 
-## 🚀 Technology Stack
+## Technology Stack
 
 | Component  | Technology/Package      | Description                                                 |
 | :--------- | :---------------------- | :---------------------------------------------------------- |
@@ -161,7 +165,7 @@ The static website requires no build process. It is located in the `CarbonEye-an
     * `about/`, `team/`, etc.: Informational sub-pages.
     * `style.css`, `script.js`: Main stylesheets and scripts.
 
-## ▶️ Running the Full Application
+## Running the Full Application
 
 1.  **Start the Backend Server**:
     In your terminal, from the `carboneye/backend` directory, run:
@@ -197,7 +201,7 @@ The static website requires no build process. It is located in the `CarbonEye-an
 * **Success Response (200 OK)**: Returns a JSON object with true-color images, NDVI maps, alerts, and analysis summary.
 * **Error Responses**: Returns `400` for invalid input or `500` for server errors.
 
-## 📦 Building for Production
+## Building for Production
 
 ### Flutter Application
 
@@ -223,6 +227,6 @@ To create a release build of the application, use the following Flutter CLI comm
 
 The static website is already "built". To deploy it, simply copy the entire contents of the `CarbonEye-anant` directory to a static web hosting service (like Netlify, Vercel, or AWS S3).
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
