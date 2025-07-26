@@ -2,11 +2,11 @@
 
 **Eyes on the forest. Always.**
 
-###  [📱 App Link](https://github.com/akshat2474/CarbonEye/releases/download/v1.0.0/CarbonEye.apk)  
-###  [🌍 Website Link](https://akshat2474.github.io/CarbonEye/)
-###  [🛠️ API Base URL](https://carboneye-api.onrender.com)
+### 📱 [Download the App](https://github.com/akshat2474/CarbonEye/releases/download/v1.0.0/CarbonEye.apk)  
+### 🌐 [Official Website](https://akshat2474.github.io/CarbonEye/)  
+### 📄 [API Docs Site](https://backend-configuration.netlify.app/) *(includes code samples and instructions on how to use our API)*  
 
->  *Note: The server is hosted on Render's free tier, which goes to sleep when inactive. The first request may take up to **50 seconds** to wake up.*
+> ⚠️ *Hosted on Render's free tier — services may take up to **50 seconds** to wake up when inactive.*
 
 ## Project Overview
 
