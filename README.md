@@ -230,3 +230,6 @@ The static website is already "built". To deploy it, simply copy the entire cont
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+## Created by
+Akshat Singh, Abhay Singh, Amaan Ali, Anant Singhal
