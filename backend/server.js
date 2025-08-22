@@ -594,21 +594,5 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, () => {
     console.log(`🚀 Server running at http://localhost:${PORT}`);
     console.log("📡 Endpoint available: POST /analyze-deforestation");
-    console.log("✨ CORRECTED Features:");
-    console.log("   - 30 days comparison");
-    console.log("   - 60 days comparison");  
-    console.log("   - Custom DATE comparison (any date >60 days ago)");
-    console.log("   - ✅ MUCH HIGHER thresholds (40-65% loss required for critical alerts)");
-    console.log("   - ✅ REDUCED probability filtering (shows 85% fewer alerts)");
-    console.log("   - ✅ ENHANCED contamination filtering:");
-    console.log("     • NO critical alerts over water areas (enhanced detection)");
-    console.log("     • NO critical alerts over black regions (enhanced detection)");
-    console.log("     • NO critical alerts over white pixels/clouds (stricter thresholds)");
-    console.log("     • Checks BOTH current AND historical images");
-    console.log("     • Removes alert if contamination found in EITHER image");
-    console.log("     • Enhanced water body detection (increased probability)");
-    console.log("     • Enhanced black pixel detection (increased thresholds)");
-    console.log("     • Stricter cloud/white pixel detection (lowered brightness thresholds)");
-    console.log("   - CRITICAL ALERTS ONLY (no moderate alerts)");
-    console.log("   - Comprehensive filtering statistics and breakdown");
+
 });
